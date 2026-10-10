@@ -1,185 +1,306 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#4C5F6B">
-  <title>Mel Esquerre — People Not Buildings</title>
-  <meta name="description" content="Mel Esquerre works across service design, research and resident participation to build trust in urban retrofit and adaptation.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#F2EFE8">
+  <meta name="description" content="People Not Buildings — independent public-interest service design focused on retrofit, trust and people.">
+  <title>People Not Buildings — Mel</title>
 
   <style>
     :root {
-      --bg-slate: #4C5F6B;
-      --bg-white: #FFFFFF;
-      --text-light: #FFFFFF;
-      --text-muted-light: rgba(255, 255, 255, 0.88);
-      --text-dark: #111827;
-      --text-muted-dark: #4B5563;
-      --line-light: rgba(255, 255, 255, 0.22);
-      --line-dark: #E5E7EB;
+      --paper: #F2EFE8;
+      --ink: #191919;
+      --stone: #E4E0D7;
+      --red: #EF3E24;
+      --muted: #66635D;
+      --line: rgba(25, 25, 25, 0.25);
+      --gutter: clamp(22px, 5vw, 76px);
+      --max-width: 1600px;
     }
 
     * {
       box-sizing: border-box;
-      border-radius: 0 !important;
     }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
     body {
       margin: 0;
-      background-color: var(--bg-slate);
-      color: var(--text-light);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      font-size: 16px;
-      line-height: 1.42;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
       -webkit-font-smoothing: antialiased;
     }
 
     a {
       color: inherit;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 4px;
-      font-weight: 500;
+      text-decoration: none;
     }
 
-    a:hover {
-      opacity: 0.8;
+    a:focus-visible {
+      outline: 2px solid var(--red);
+      outline-offset: 5px;
     }
 
-    /* Top Slate Blue Section */
-    .slate-wrapper {
-      background-color: var(--bg-slate);
-      color: var(--text-light);
-      padding-bottom: 52px;
-    }
-
-    .page-container {
-      width: min(100% - 64px, 1020px);
+    .page {
+      max-width: var(--max-width);
       margin: 0 auto;
+      overflow: clip;
     }
 
-    header {
-      padding: 56px 0 40px;
-      border-bottom: 1px solid var(--line-light);
-    }
-
-    .identity {
+    .site-header {
+      min-height: 82px;
+      padding: 20px var(--gutter);
       display: flex;
-      align-items: flex-start;
       justify-content: space-between;
-      gap: 40px;
+      align-items: center;
+      gap: 24px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .identity-text {
-      flex: 1;
-      min-width: 0;
+    .wordmark {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      text-transform: uppercase;
     }
 
-    h1 {
+    .wordmark span {
+      color: var(--red);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(18px, 3vw, 42px);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav a {
+      transition: color 160ms ease;
+    }
+
+    .nav a:hover,
+    .text-link:hover {
+      color: var(--red);
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: clamp(60px, 10vw, 150px) var(--gutter)
+               clamp(55px, 8vw, 110px);
+    }
+
+    .eyebrow {
+      margin: 0 0 32px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
       margin: 0;
-      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
+      font-size: clamp(76px, 15.1vw, 218px);
+      font-weight: 800;
+      letter-spacing: -0.095em;
+      line-height: 0.76;
+    }
+
+    .hero h1 span {
+      display: block;
+    }
+
+    .hero h1 .red {
+      color: var(--red);
+    }
+
+    .hero-bottom {
+      display: grid;
+      grid-template-columns: 1fr minmax(240px, 420px);
+      align-items: end;
+      gap: 35px;
+      margin-top: clamp(48px, 8vw, 105px);
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .hero-bottom .statement {
+      max-width: 700px;
+      margin: 0;
+      font-size: clamp(23px, 3.1vw, 42px);
+      font-weight: 600;
+      letter-spacing: -0.055em;
+      line-height: 1.1;
+    }
+
+    .hero-bottom .note {
+      max-width: 350px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Dark statement */
+
+    .statement-section {
+      padding: clamp(55px, 9vw, 125px) var(--gutter);
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .statement-section .eyebrow {
+      color: #BDB8AE;
+    }
+
+    .statement-section h2 {
+      max-width: 1100px;
+      margin: 0;
+      font-size: clamp(62px, 12.5vw, 170px);
+      font-weight: 800;
+      letter-spacing: -0.085em;
+      line-height: 0.85;
+    }
+
+    .statement-section h2 span {
+      color: var(--red);
+    }
+
+    .statement-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-top: clamp(45px, 7vw, 90px);
+      padding-top: 22px;
+      border-top: 1px solid rgba(242, 239, 232, 0.35);
+    }
+
+    .statement-footer p {
+      max-width: 560px;
+      margin: 0;
+      font-size: clamp(20px, 2.5vw, 32px);
+      font-weight: 500;
+      letter-spacing: -0.045em;
+      line-height: 1.2;
+    }
+
+    .small-mark {
+      flex-shrink: 0;
+      color: var(--red);
+      font-size: 30px;
       font-weight: 700;
     }
 
-    .qualifications {
-      display: block;
-      margin-top: 6px;
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      font-weight: 300;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      opacity: 0.9;
+    /* Lochend story */
+
+    .story {
+      padding: clamp(65px, 10vw, 140px) var(--gutter);
     }
 
-    .tagline {
-      margin-top: 18px;
-      font-size: clamp(1.05rem, 2vw, 1.35rem);
-      font-weight: 400;
-      line-height: 1.38;
-      color: var(--text-muted-light);
-      max-width: 540px;
-    }
-
-    .portrait {
-      display: block;
-      width: clamp(170px, 24vw, 240px);
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      flex-shrink: 0;
-      border: 1px solid var(--line-light);
-    }
-
-    /* Lochend Section */
-    .lochend-section {
-      padding-top: 40px;
-    }
-
-    h2 {
-      margin: 0 0 16px;
-      font-size: 1.4rem;
-      font-weight: 800;
-      letter-spacing: -0.015em;
-    }
-
-    /* Flex grid aligned directly to paragraph top */
-    .lochend-body-grid {
+    .section-top {
       display: flex;
-      align-items: flex-start;
-      gap: 40px;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .lochend-text {
-      flex: 1.1;
-      min-width: 0;
+    .section-top p {
+      margin: 0;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
-    .lochend-text p:first-child {
+    .section-top .index {
+      color: var(--red);
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.85fr);
+      gap: clamp(35px, 8vw, 120px);
+      padding-top: clamp(38px, 6vw, 75px);
+    }
+
+    .story h2 {
+      max-width: 650px;
+      margin: 0;
+      font-size: clamp(42px, 6.8vw, 90px);
+      font-weight: 800;
+      letter-spacing: -0.075em;
+      line-height: 0.95;
+    }
+
+    .story h2 span {
+      color: var(--red);
+    }
+
+    .story-copy {
+      max-width: 620px;
+      padding-top: 5px;
+    }
+
+    .story-copy p {
+      margin: 0 0 24px;
+      font-size: clamp(16px, 1.5vw, 19px);
+      line-height: 1.75;
+    }
+
+    .story-copy p + p {
       margin-top: 0;
     }
 
-    .lochend-media {
-      flex: 0.9;
-      min-width: 0;
+    .video-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 18px;
+      padding: 17px 20px;
+      background: var(--red);
+      color: var(--ink);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      transition: background 160ms ease, color 160ms ease;
     }
 
-    .slate-wrapper p {
-      margin: 0 0 10px;
-      color: var(--text-muted-light);
-      font-size: 1.02rem;
-      line-height: 1.42;
+    .video-link:hover {
+      background: var(--ink);
+      color: var(--paper);
     }
 
-    .slate-wrapper p:last-child {
-      margin-bottom: 0;
+    .video-wrap {
+      grid-column: 1 / -1;
+      margin-top: clamp(30px, 4vw, 55px);
+      background: var(--stone);
+      border-top: 1px solid var(--line);
     }
 
-    /* Clickable Video Poster Container */
-    .video-poster-card {
+    .video-frame {
       position: relative;
       width: 100%;
       aspect-ratio: 16 / 9;
-      margin-top: 0;
-      background-color: #1A2228;
-      background-size: cover;
-      background-position: center;
-      border: 1px solid var(--line-light);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+      background: var(--ink);
     }
 
-    .video-poster-card iframe {
+    .video-frame iframe {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -187,221 +308,377 @@
       border: 0;
     }
 
-    .play-button {
-      width: 58px;
-      height: 58px;
-      background: rgba(0, 0, 0, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.4);
+    .video-caption {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease;
-      z-index: 2;
-    }
-
-    .play-button::after {
-      content: "";
-      display: block;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 10px 0 10px 18px;
-      border-color: transparent transparent transparent #FFFFFF;
-      margin-left: 4px;
-    }
-
-    .video-poster-card:hover .play-button {
-      background: #FFFFFF;
-      border-color: #FFFFFF;
-    }
-
-    .video-poster-card:hover .play-button::after {
-      border-color: transparent transparent transparent #111827;
-    }
-
-    /* Bottom Clean White Section */
-    .white-wrapper {
-      background-color: var(--bg-white);
-      color: var(--text-dark);
-      padding: 20px 0 60px;
-    }
-
-    .white-wrapper section {
-      padding: 36px 0;
-      border-bottom: 1px solid var(--line-dark);
-    }
-
-    .white-wrapper section:last-of-type {
-      border-bottom: none;
-    }
-
-    .white-wrapper h2 {
-      color: var(--text-dark);
-    }
-
-    .white-wrapper p {
-      margin: 0 0 10px;
-      color: var(--text-muted-dark);
-      font-size: 1.02rem;
-      line-height: 1.42;
-      max-width: 760px;
-    }
-
-    .white-wrapper p:last-child {
-      margin-bottom: 0;
-    }
-
-    .white-wrapper p strong {
-      color: var(--text-dark);
-      font-weight: 700;
-    }
-
-    footer {
-      display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 24px;
-      padding-top: 40px;
-      border-top: 1px solid var(--line-dark);
-      color: var(--text-muted-dark);
-      font-size: 0.88rem;
-    }
-
-    .linkedin {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 34px;
-      height: 34px;
-      border: 1px solid var(--text-dark);
-      color: var(--text-dark);
-      text-decoration: none;
+      gap: 20px;
+      padding: 15px 0;
+      font-size: 11px;
       font-weight: 700;
-      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
 
-    .linkedin:hover {
-      background: var(--text-dark);
-      color: var(--bg-white);
+    /* About */
+
+    .about {
+      padding: clamp(65px, 10vw, 130px) var(--gutter);
+      background: var(--stone);
     }
 
-    @media (max-width: 768px) {
-      .page-container {
-        width: min(100% - 36px, 1020px);
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1fr;
+      gap: clamp(35px, 9vw, 130px);
+      padding-top: 40px;
+    }
+
+    .about h2 {
+      margin: 0;
+      font-size: clamp(58px, 9vw, 120px);
+      font-weight: 800;
+      letter-spacing: -0.085em;
+      line-height: 0.85;
+    }
+
+    .about h2 span {
+      color: var(--red);
+    }
+
+    .about-copy {
+      max-width: 600px;
+    }
+
+    .about-copy p {
+      margin: 0 0 22px;
+      font-size: clamp(17px, 1.6vw, 21px);
+      line-height: 1.7;
+    }
+
+    .about-copy .placeholder-note {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Contact */
+
+    .contact {
+      padding: clamp(65px, 10vw, 135px) var(--gutter);
+    }
+
+    .contact h2 {
+      max-width: 1050px;
+      margin: 40px 0 50px;
+      font-size: clamp(60px, 12vw, 160px);
+      font-weight: 800;
+      letter-spacing: -0.09em;
+      line-height: 0.85;
+    }
+
+    .contact h2 span {
+      color: var(--red);
+    }
+
+    .contact-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 25px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-bottom p {
+      max-width: 440px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .email-link {
+      font-size: clamp(16px, 2vw, 23px);
+      font-weight: 700;
+      overflow-wrap: anywhere;
+      text-decoration: underline;
+      text-decoration-color: var(--red);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 5px;
+    }
+
+    .site-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px var(--gutter);
+      border-top: 1px solid var(--line);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .site-footer p {
+      margin: 0;
+    }
+
+    .back-top {
+      color: var(--red);
+    }
+
+    @media (min-width: 1600px) {
+      .hero h1 {
+        font-size: 218px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .site-header {
+        min-height: 74px;
+        align-items: flex-start;
       }
 
-      header {
-        padding: 40px 0 32px;
+      .nav {
+        gap: 14px;
+        font-size: 10px;
       }
 
-      .identity {
-        flex-direction: column-reverse;
+      .hero h1 {
+        font-size: clamp(70px, 16vw, 115px);
+      }
+
+      .hero-bottom,
+      .story-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-bottom {
         gap: 24px;
       }
 
-      .portrait {
-        width: 100%;
-        max-width: 260px;
+      .story-grid {
+        gap: 35px;
       }
 
-      .lochend-body-grid {
+      .video-wrap {
+        grid-column: auto;
+      }
+
+      .statement-footer,
+      .contact-bottom {
+        align-items: flex-start;
         flex-direction: column;
-        gap: 24px;
       }
 
-      .lochend-media {
+      .statement-section h2 {
+        font-size: clamp(60px, 13vw, 90px);
+      }
+
+      .video-caption {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .site-header {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .nav {
         width: 100%;
+        justify-content: space-between;
+      }
+
+      .hero h1 {
+        font-size: 19vw;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
 </head>
 
 <body>
+  <div class="page" id="top">
 
-  <!-- Top Slate Blue Wrapper -->
-  <div class="slate-wrapper">
-    <div class="page-container">
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="People Not Buildings, back to top">
+        People <span>Not</span> Buildings
+      </a>
 
-      <header>
-        <div class="identity">
-          <div class="identity-text">
-            <h1>Mel Esquerre</h1>
-            <span class="qualifications">MBA CF</span>
-            <div class="tagline">Designing programmes and services that put people first</div>
-          </div>
-          <img class="portrait" src="mel.jpg" alt="Portrait of Mel Esquerre">
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about">About Mel</a>
+        <a href="#contact">Contact ↗</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">Service design · Public interest</p>
+
+        <h1 id="hero-title">
+          <span>People</span>
+          <span class="red">not</span>
+          <span>buildings.</span>
+        </h1>
+
+        <div class="hero-bottom">
+          <p class="statement">
+            Trust is a design decision.
+          </p>
+
+          <p class="note">
+            Rethinking how retrofit programmes are designed,
+            delivered and experienced by the people they’re
+            supposed to serve.
+          </p>
         </div>
-      </header>
+      </section>
 
-      <section class="lochend-section" id="lochend">
-        <h2>Lochend</h2>
-        <div class="lochend-body-grid">
-          <div class="lochend-text">
-            <p>I live in Lochend, north east Edinburgh, an area of high deprivation. Since 2023 a government-funded retrofit programme has been rolled out across many homes in our community, including my own.</p>
-            <p>Despite good intentions, the programme was not designed around the realities and needs of a low-income community. For many of us this has resulted in debt, poor quality works, damage, and in some cases, eviction. Others have been left with no improvements at all.</p>
+      <section class="statement-section">
+        <p class="eyebrow">A principle, not a slogan</p>
+
+        <h2>No trust,<br>no <span>scale.</span></h2>
+
+        <div class="statement-footer">
+          <p>
+            Public programmes should work for the people
+            they’re meant to benefit.
+          </p>
+          <span class="small-mark" aria-hidden="true">↘</span>
+        </div>
+      </section>
+
+      <section class="story" id="lochend">
+        <div class="section-top">
+          <p>Lochend, north east Edinburgh</p>
+          <p class="index">People before property</p>
+        </div>
+
+        <div class="story-grid">
+          <h2>
+            When good intentions
+            <span>go wrong.</span>
+          </h2>
+
+          <div class="story-copy">
+            <p>I live in Lochend, north east Edinburgh, an area of high deprivation. Since 2023 a government-funded retrofit programme has been rolled out across our many homes, including mine.</p>
+
+            <p>Despite good intentions,the programme design did not follow the reality of what a low income community needs. For many of us this has resulted in debt, poor quality works, damage, and in some cases eviction. Others have been left with no improvements at all.</p>
+
+            <a
+              class="video-link"
+              href="https://www.youtube.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              id="video-link"
+            >
+              Watch: The Lochend story <span aria-hidden="true">↗</span>
+            </a>
           </div>
-          <div class="lochend-media">
-            <div class="video-poster-card" id="videoCard" style="background-image: url('https://img.youtube.com/vi/feq_eQRjyCc/maxresdefault.jpg');" onclick="playVideo()">
-              <div class="play-button" aria-label="Play video"></div>
+
+          <!--
+            OPTIONAL VIDEO EMBED:
+            To show your YouTube film directly on the page:
+            1. Replace VIDEO_ID with the ID from your YouTube URL.
+            2. Uncomment the video-wrap section below.
+            3. You can then remove the video-link above if desired.
+
+            Example YouTube URL:
+            https://www.youtube.com/watch?v=VIDEO_ID
+          -->
+
+          <!--
+          <div class="video-wrap">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/VIDEO_ID"
+                title="The Lochend retrofit story"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
             </div>
+            <div class="video-caption">
+              <span>The Lochend story</span>
+              <span>Community voices · Retrofit · Lived experience</span>
+            </div>
+          </div>
+          -->
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="section-top">
+          <p>About Mel</p>
+          <p class="index">The person behind the practice</p>
+        </div>
+
+        <div class="about-grid">
+          <h2>People<br>are the <span>point.</span></h2>
+
+          <div class="about-copy">
+            <!-- Replace this with your own About Mel introduction. -->
+            <p>
+              I’m Mel. I work at the intersection of service design,
+              public programmes and people’s lived experience.
+            </p>
+
+            <p>
+              I’m interested in what changes when we design public
+              services around the realities of people’s lives —
+              rather than expecting people to fit the programme.
+            </p>
+
+            <p class="placeholder-note">
+              I’ve worked in social housing, energy efficiency and construction. For the last 3 years I’ve been campaigning on retrofit with Living Rent and talking to industry and councils about what I’ve seen so that this does not happen to others. My Churchill Fellowship report, on what happens when residents are trusted to take part in retrofit: https://www.churchillfellowship.org/ideas-experts/ideas-library/people-not-buildings-trust-empowerment-and-resident-participation-in-urban-retrofit-and-adaptation/
+            </p>
           </div>
         </div>
       </section>
 
-    </div>
+      <section class="contact" id="contact">
+        <div class="section-top">
+          <p>Contact</p>
+          <p class="index">Start a conversation</p>
+        </div>
+
+        <h2>Let’s make<br>things <span>better.</span></h2>
+
+        <div class="contact-bottom">
+          <p>
+            Interested in public services that work better for people?
+            Get in touch.
+          </p>
+
+          <!-- Replace with your actual email address. -->
+          <a class="email-link" href="mailto:YOUR-EMAIL@example.com">
+            YOUR-EMAIL@example.com ↗
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>People Not Buildings</p>
+      <p>Independent · Public interest</p>
+      <a class="back-top" href="#top">Back to top ↑</a>
+    </footer>
+
   </div>
-
-  <!-- Bottom White Wrapper -->
-  <div class="white-wrapper">
-    <div class="page-container">
-
-      <main>
-        <section id="working-on">
-          <h2>What I’m working on</h2>
-          <p>Retrofit means asking millions of households to say yes, and people only say yes to what they trust. Without it, programmes can’t scale.</p>
-          <p><strong>No trust, no scale.</strong></p>
-          <p>Lochend is what that looks like on the ground. Most retrofit programmes start with the surveys and the budget, and trust comes in at the end, when it’s usually too late. I want to do it the other way round: trust first, before anything is designed. I call it pre-design trust.</p>
-          <p>I am working on two specific questions: How do we build trust and the right practices into retrofit programmes? And if we did start early, how do we stop it turning into a box to tick?</p>
-        </section>
-
-        <section id="background">
-          <h2>Background</h2>
-          <p>I’ve worked in social housing, energy efficiency and construction. For the last 3 years I’ve been campaigning on retrofit with Living Rent and talking to industry and councils about what I’ve seen so that this does not happen to other communities. I trained in service design, which is how I approach most things.</p>
-        </section>
-
-        <section id="people-not-buildings">
-          <h2>People Not Buildings</h2>
-          <p>My Churchill Fellowship report, on what happens when residents are trusted to take part in retrofit:</p>
-          <p><a href="https://www.churchillfellowship.org/ideas-experts/ideas-library/people-not-buildings-trust-empowerment-and-resident-participation-in-urban-retrofit-and-adaptation/" target="_blank" rel="noopener noreferrer">Read my Churchill Fellowship work ↗</a></p>
-        </section>
-
-        <section id="talks">
-          <h2>Talks and training</h2>
-          <p>I speak to staff, contractors, housing providers and industry bodies about why residents say yes or no to retrofit, and what that means for how programmes are run.</p>
-        </section>
-
-        <section id="contact">
-          <h2>Contact</h2>
-          <p>For conversations, collaborations, talks or training:</p>
-          <p><a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a></p>
-        </section>
-      </main>
-
-      <footer>
-        <span>Mel Esquerre · 2026</span>
-        <a class="linkedin" href="https://www.linkedin.com/in/melesquerre/" target="_blank" rel="noopener noreferrer" aria-label="Mel Esquerre on LinkedIn">in</a>
-      </footer>
-
-    </div>
-  </div>
-
-  <script>
-    function playVideo() {
-      var card = document.getElementById('videoCard');
-      card.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/feq_eQRjyCc?autoplay=1" title="Lochend case study video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
-      card.onclick = null;
-    }
-  </script>
-
 </body>
 </html>
