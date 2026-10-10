@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -60,23 +59,45 @@
 
     .identity {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 32px;
+    }
+
+    .identity-text {
+      flex: 1;
     }
 
     h1 {
       margin: 0;
       font-size: clamp(2.4rem, 7vw, 5.2rem);
       line-height: 1.08;
-      letter-spacing: 0.075em;
+      letter-spacing: 0.01em; /* Reduced spacing between letters */
       font-weight: 500;
     }
 
+    .qualifications {
+      display: block;
+      margin-top: 6px;
+      font-size: clamp(1rem, 2.5vw, 1.35rem);
+      font-weight: 300; /* Thinner font */
+      opacity: 0.85;
+      letter-spacing: 0.02em;
+    }
+
+    .tagline {
+      margin-top: 18px;
+      font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--muted);
+    }
+
+    /* Fixed portrait/landscape image styling */
     .portrait {
       display: block;
-      width: clamp(100px, 17vw, 165px);
-      aspect-ratio: 4 / 5;
+      width: clamp(140px, 22vw, 220px);
+      aspect-ratio: 4 / 3; /* Landscape orientation */
       object-fit: cover;
       border-radius: 2px;
       flex-shrink: 0;
@@ -126,6 +147,16 @@
 
     section p:last-child {
       margin-bottom: 0;
+    }
+
+    .callout {
+      margin: 20px 0;
+      padding: 16px 20px;
+      border-left: 3px solid var(--text);
+      background: rgba(255, 255, 255, 0.06);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text);
     }
 
     .video {
@@ -195,17 +226,20 @@
       }
 
       .identity {
-        gap: 18px;
+        flex-direction: column-reverse;
+        gap: 20px;
       }
 
       h1 {
         font-size: clamp(1.8rem, 8vw, 3rem);
-        letter-spacing: 0.045em;
+        letter-spacing: 0.01em;
         overflow-wrap: anywhere;
       }
 
       .portrait {
-        width: 100px;
+        width: 100%;
+        max-width: 280px;
+        aspect-ratio: 4 / 3;
       }
 
       .intro {
@@ -228,22 +262,23 @@
 
     <header>
       <div class="identity">
-        <h1>Mel Esquerre</h1>
+        <div class="identity-text">
+          <h1>Mel Esquerre</h1>
+          <span class="qualifications">MBA CF</span>
+          <div class="tagline">Designing programmes and services that put people first.</div>
+        </div>
         <img class="portrait" src="mel.jpg" alt="Portrait of Mel Esquerre">
       </div>
     </header>
 
     <main>
-      <div class="intro">
-        <p>I work across service design, programme design and research to help people shape the places and services that affect their lives.</p>
-        <p>My focus is on resident participation, agency and trust — especially when decisions are being made about our homes and neighbourhoods.</p>
-      </div>
 
       <section id="lochend">
         <p class="eyebrow">01 / Case study</p>
         <h2>Lochend</h2>
-        <p>What does it take for residents to have a meaningful role in decisions about the places they live?</p>
-        <p>My work explores how participation can begin with listening, relationships and trust — rather than asking people to respond once the important decisions have already been made.</p>
+        <p>I live in Lochend, in north east Edinburgh. Since 2023 a government-funded retrofit programme has been rolled out across our neighbourhood, an area of high deprivation. It started with good intentions but the programme design did not follow the reality of what a low income community needs. For many of us this has resulted in debt, poor quality works, damage, and in some cases eviction. Others have been left with no improvements at all.</p>
+        <p>Walk round Lochend today and you can see buildings that were never upgraded, because the people who had a choice said no.</p>
+        <p>I’m one of the residents directly affected by this programme and that is what drives my work.</p>
 
         <div class="video">
           <iframe
@@ -260,31 +295,31 @@
       <section id="working-on">
         <p class="eyebrow">02 / Now</p>
         <h2>What I’m working on</h2>
-        <p>I’m interested in how services, programmes and research can create the conditions for people to participate with confidence and influence decisions that affect them.</p>
-        <p>My work connects lived experience with the systems, organisations and decisions that shape everyday life.</p>
+        <p>Retrofit means asking millions of households to say yes, and people only say yes to what they trust. Without it, programmes can’t scale.</p>
+
+        <div class="callout">No trust, no scale.</div>
+
+        <p>Lochend is what that looks like on the ground. Most retrofit programmes start with the surveys and the budget, and trust comes in at the end, when it’s usually too late. I want to do it the other way round: trust first, before anything is designed. I call it pre-design trust.</p>
+        <p>I am working on two specific questions: How do we build trust and the right practices into retrofit programmes? And if we did start early, how do we stop it turning into a box to tick?</p>
       </section>
 
       <section id="background">
         <p class="eyebrow">03 / About</p>
         <h2>Background</h2>
-        <p>My practice brings together service design, research, programme design and participation. I work with complexity by making space for different perspectives, building shared understanding and helping turn insight into action.</p>
+        <p>I’ve worked in social housing, energy efficiency and construction. For the last 3 years I’ve been campaigning on retrofit with Living Rent and talking to industry and councils about what I’ve seen so that this does not happen to other communities. I trained in service design, which is how I approach most things.</p>
       </section>
 
       <section id="people-not-buildings">
         <p class="eyebrow">04 / Point of view</p>
         <h2>People Not Buildings</h2>
-        <div class="feature">
-          <p>**You cannot retrofit trust.**</p>
-          <p>Retrofitting and climate adaptation are not only technical challenges. They are also questions of power, relationships and whose knowledge counts.</p>
-          <p>People Not Buildings is about putting residents, trust and empowerment at the heart of decisions about the built environment.</p>
-          <a href="https://www.churchillfellowship.org/ideas-experts/ideas-library/people-not-buildings-trust-empowerment-and-resident-participation-in-urban-retrofit-and-adaptation/" target="_blank" rel="noopener noreferrer">Read my Churchill Fellowship work ↗</a>
-        </div>
+        <p>My Churchill Fellowship report, on what happens when residents are trusted to take part in retrofit:</p>
+        <p><a href="https://www.churchillfellowship.org/ideas-experts/ideas-library/people-not-buildings-trust-empowerment-and-resident-participation-in-urban-retrofit-and-adaptation/" target="_blank" rel="noopener noreferrer">Read my Churchill Fellowship work ↗</a></p>
       </section>
 
       <section id="talks">
         <p class="eyebrow">05 / Sharing practice</p>
         <h2>Talks and training</h2>
-        <p>I’m interested in talks, workshops and training around resident participation, service design, research, trust-building and more meaningful ways of involving people in decisions.</p>
+        <p>I speak to staff, contractors, housing providers and industry bodies about why residents say yes or no to retrofit, and what that means for how programmes are run.</p>
       </section>
 
       <section id="contact">
@@ -303,4 +338,3 @@
   </div>
 </body>
 </html>
-```
