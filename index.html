@@ -1,0 +1,453 @@
+
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="theme-color" content="#4C5F6B">
+  <meta name="description" content="Mel Esquerre — service design, research, programme design and resident participation.">
+
+  <title>Mel Esquerre</title>
+
+  <!-- Inter variable font: weights 100–900 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --background: #4C5F6B;
+      --white: #FFFFFF;
+      --soft-white: #E5EBEE;
+      --line: rgba(255, 255, 255, 0.28);
+      --page-width: 1200px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 3rem;
+      background: var(--background);
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--white);
+      font-family: "Inter", sans-serif;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-underline-offset: 0.2em;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--white);
+      outline-offset: 5px;
+    }
+
+    .page {
+      width: min(100% - 3rem, var(--page-width));
+      margin-inline: auto;
+    }
+
+    /* INTRO */
+
+    .intro {
+      min-height: 88svh;
+      padding-top: clamp(5rem, 15vh, 11rem);
+      padding-bottom: 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(250px, 0.85fr);
+      gap: clamp(2rem, 7vw, 6rem);
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 800px;
+      font-size: clamp(3.8rem, 9.5vw, 8.5rem);
+      font-weight: 750;
+      line-height: 0.94;
+      letter-spacing: -0.085em;
+    }
+
+    h1 span {
+      display: block;
+    }
+
+    .tagline {
+      max-width: 34rem;
+      margin: 1.8rem 0 0;
+      color: var(--soft-white);
+      font-size: clamp(1.15rem, 2.2vw, 1.65rem);
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .portrait {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .scroll-note {
+      margin-top: 5rem;
+      color: var(--soft-white);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* SECTIONS */
+
+    .content-section {
+      padding-block: clamp(4rem, 10vw, 8rem);
+      border-top: 1px solid var(--line);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(180px, 0.7fr) minmax(0, 1.3fr);
+      gap: clamp(2rem, 8vw, 8rem);
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4.5vw, 4rem);
+      font-weight: 650;
+      line-height: 1.05;
+      letter-spacing: -0.065em;
+    }
+
+    .section-content {
+      max-width: 690px;
+    }
+
+    .section-content p {
+      margin: 0 0 1.4rem;
+      color: var(--soft-white);
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      font-weight: 400;
+      line-height: 1.85;
+    }
+
+    .section-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* VIDEO */
+
+    .video {
+      position: relative;
+      width: 100%;
+      margin-top: 2.5rem;
+      aspect-ratio: 16 / 9;
+      background: rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+    }
+
+    .video iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* CONTACT */
+
+    .contact-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      font-weight: 550;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      padding-block: 2rem;
+      border-top: 1px solid var(--line);
+      color: var(--soft-white);
+      font-size: 0.85rem;
+    }
+
+    .linkedin {
+      position: fixed;
+      right: 1.5rem;
+      bottom: 1.5rem;
+      z-index: 10;
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      color: var(--background);
+      background: var(--white);
+      border-radius: 3px;
+      transition: transform 160ms ease;
+    }
+
+    .linkedin:hover {
+      transform: translateY(-3px);
+    }
+
+    .linkedin svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: calc(100% - 2.5rem);
+      }
+
+      .intro {
+        min-height: auto;
+        padding-top: 6rem;
+        padding-bottom: 4rem;
+      }
+
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      h1 {
+        font-size: clamp(3.5rem, 14vw, 6rem);
+      }
+
+      .portrait {
+        max-width: 100%;
+      }
+
+      .scroll-note {
+        margin-top: 3rem;
+      }
+
+      .section-grid {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+      }
+
+      .content-section {
+        padding-block: 4rem;
+      }
+
+      .linkedin {
+        right: 1rem;
+        bottom: 1rem;
+      }
+
+      footer {
+        padding-right: 3.5rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .linkedin {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <!-- INTRO -->
+    <header class="intro">
+      <div class="intro-grid">
+        <div>
+          <h1>
+            <span>Mel</span>
+            <span>Esquerre</span>
+          </h1>
+
+          <!-- Replace with your final tagline -->
+          <p class="tagline">[Your tagline goes here]</p>
+        </div>
+
+        <!-- Add your landscape portrait to the repo as mel.jpg -->
+        <img
+          class="portrait"
+          src="mel.jpg"
+          alt="Mel Esquerre"
+          width="1200"
+          height="900"
+        >
+      </div>
+
+      <p class="scroll-note">Selected work &amp; what I'm doing</p>
+    </header>
+
+    <!-- LOCHEND -->
+    <section class="content-section" id="lochend">
+      <div class="section-grid">
+        <h2>Lochend</h2>
+
+        <div class="section-content">
+          <p>
+            [First short paragraph about the Lochend project:
+            the context, the place and why the work matters.]
+          </p>
+
+          <p>
+            [Second short paragraph about your role, your approach
+            and what the project is exploring or changing.]
+          </p>
+
+          <!-- Replace VIDEO_ID with the ID from your YouTube URL.
+               Example: youtube.com/watch?v=abc123
+               The video ID would be abc123. -->
+          <div class="video">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/VIDEO_ID"
+              title="Lochend project video"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT I'M WORKING ON -->
+    <section class="content-section" id="current-work">
+      <div class="section-grid">
+        <h2>What I'm<br>working on</h2>
+
+        <div class="section-content">
+          <p>
+            [Describe the questions, challenges or projects occupying
+            your attention at the moment.]
+          </p>
+
+          <p>
+            [Explain how your work connects service design, programme
+            design, research, resident participation and the built
+            environment.]
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BACKGROUND -->
+    <section class="content-section" id="background">
+      <div class="section-grid">
+        <h2>Background</h2>
+
+        <div class="section-content">
+          <p>
+            [One paragraph about your professional background,
+            experience and the perspective you bring to your work.]
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PEOPLE NOT BUILDINGS -->
+    <section class="content-section" id="people-not-buildings">
+      <div class="section-grid">
+        <h2>People Not<br>Buildings</h2>
+
+        <div class="section-content">
+          <p>
+            [Introduce your Churchill Fellowship work on trust,
+            empowerment and resident participation in urban retrofit
+            and adaptation. Add a link to the published report.]
+          </p>
+
+          <p>
+            <a
+              href="https://www.churchillfellowship.org/ideas-experts/ideas-library/people-not-buildings-trust-empowerment-and-resident-participation-in-urban-retrofit-and-adaptation/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Read the People Not Buildings report ↗</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TALKS AND TRAINING -->
+    <section class="content-section" id="talks">
+      <div class="section-grid">
+        <h2>Talks and<br>training</h2>
+
+        <div class="section-content">
+          <p>
+            [Describe the talks, workshops or training you offer,
+            and the audiences you work with.]
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="content-section" id="contact">
+      <div class="section-grid">
+        <h2>Contact</h2>
+
+        <div class="section-content">
+          <p>
+            Interested in working together, discussing a project
+            or inviting me to speak? Get in touch.
+          </p>
+
+          <!-- Replace with your professional email address -->
+          <a class="contact-link" href="mailto:YOUR_EMAIL@example.com">
+            YOUR_EMAIL@example.com ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>Mel Esquerre</span>
+      <span>Independent practice</span>
+    </footer>
+
+  </main>
+
+  <!-- Replace the URL with your LinkedIn profile -->
+  <a
+    class="linkedin"
+    href="https://www.linkedin.com/in/YOUR-PROFILE/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Mel Esquerre on LinkedIn"
+    title="LinkedIn"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.5H4.96V9h2.97v9.5ZM6.45 7.7a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44ZM19 18.5h-2.97v-4.62c0-1.1-.02-2.51-1.53-2.51-1.53 0-1.77 1.2-1.77 2.43v4.7H9.76V9h2.85v1.3h.04c.4-.75 1.37-1.53 2.82-1.53 3.01 0 3.57 1.98 3.57 4.55v5.18Z"/>
+    </svg>
+  </a>
+</body>
+</html>
