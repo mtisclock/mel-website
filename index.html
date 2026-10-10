@@ -63,6 +63,14 @@
       border: none;
     }
 
+    .arrow-icon {
+  display: inline-block;
+  width: 0.85em;
+  height: 0.85em;
+  vertical-align: -0.02em;
+  flex-shrink: 0;
+  color: currentColor;
+}
     .arrow {
   display: inline-block;
   font-family: Arial, Helvetica, sans-serif;
@@ -533,7 +541,12 @@
     <header class="site-header">
       <nav class="nav" aria-label="Main navigation">
         <a href="#about">About Mel</a>
-        <a href="#contact">Contact <span class="arrow">↗</span></a>
+     <a href="#contact">
+  Contact
+  <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+    <path d="M3 13L13 3M5 3H13V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/>
+  </svg>
+</a>
       </nav>
     </header>
 
@@ -547,14 +560,9 @@
 
         <div class="hero-bottom">
           <p class="statement">
-            Trust is a design decision.
+            Rethinking how retrofit is designed, delivered and experienced by the people it’s meant to serve.
           </p>
 
-          <p class="story-intro">
-            Rethinking how retrofit programmes are designed,
-            delivered and experienced by the people they’re
-            supposed to serve.
-          </p>
         </div>
       </section>
 
@@ -574,15 +582,18 @@
 
             <p>Despite good intentions,the programme design did not follow the reality of what a low income community needs. For many of us this has resulted in debt, poor quality works, damage, and in some cases eviction. Others have been left with no improvements at all.</p>
 
-            <a
-              class="video-link"
-              href="https://www.youtube.com/watch?v=feq_eQRjyCc"
-              target="_blank"
-              rel="noopener noreferrer"
-              id="video-link"
-            >
-              Watch: The Lochend story <span class="arrow" aria-hidden="true">↗</span>
-            </a>
+          <a
+  class="video-link"
+  href="https://www.youtube.com/watch?v=feq_eQRjyCc"
+  target="_blank"
+  rel="noopener noreferrer"
+  id="video-link"
+>
+  Watch: The Lochend story
+  <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+    <path d="M3 13L13 3M5 3H13V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/>
+  </svg>
+</a>
           </div>
         </div>
       </section>
@@ -660,7 +671,10 @@
 
           <!-- Replace with your actual email address. -->
           <a class="email-link" href="mailto:YOUR-EMAIL@example.com">
-            YOUR-EMAIL@example.com <span class="arrow" aria-hidden="true">↗</span>
+           YOUR-EMAIL@example.com
+<svg class="arrow-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+  <path d="M3 13L13 3M5 3H13V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/>
+</svg>
           </a>
         </div>
       </section>
