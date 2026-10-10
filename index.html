@@ -309,83 +309,89 @@
 
     /* About */
 
-    .about {
-      padding: clamp(65px, 10vw, 130px) var(--gutter);
-      background: var(--stone);
-    }
+.about {
+  padding: clamp(65px, 10vw, 130px) var(--gutter);
+  background: var(--ink);
+  color: var(--paper);
+}
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.8fr 1fr;
-      gap: clamp(35px, 9vw, 130px);
-      padding-top: 40px;
-    }
+.about .section-top {
+  border-bottom-color: rgba(242, 239, 232, 0.35);
+}
 
-    .about h2 {
-      margin: 0;
-      font-size: clamp(58px, 9vw, 120px);
-      font-weight: 800;
-      letter-spacing: -0.085em;
-      line-height: 0.85;
-    }
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  gap: clamp(35px, 9vw, 130px);
+  padding-top: 40px;
+}
 
-    .about h2 span {
-      color: var(--red);
-    }
+.about h2 {
+  margin: 0;
+  font-size: clamp(58px, 9vw, 120px);
+  font-weight: 800;
+  letter-spacing: -0.085em;
+  line-height: 0.85;
+}
 
-    .about-copy {
-      max-width: 600px;
-    }
+.about h2 span {
+  color: var(--red);
+}
 
-    .about-copy p {
-      margin: 0 0 22px;
-      font-size: clamp(17px, 1.6vw, 21px);
-      line-height: 1.7;
-    }
+.about-copy {
+  max-width: 600px;
+}
 
-    .about-copy .placeholder-note {
-      color: var(--muted);
-      font-size: 14px;
-    }
+.about-copy p {
+  margin: 0 0 22px;
+  font-size: clamp(17px, 1.6vw, 21px);
+  line-height: 1.7;
+}
 
-    .report-link {
-      text-decoration: underline;
-      text-decoration-color: var(--red);
-      text-decoration-thickness: 1px;
-      text-underline-offset: 4px;
-      overflow-wrap: anywhere;
-    }
+.about-copy .placeholder-note {
+  color: #BDB8AE;
+  font-size: 14px;
+}
 
-    .report-link:hover {
-      color: var(--red);
-    }
+.report-link {
+  color: var(--paper);
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  overflow-wrap: anywhere;
+}
 
-    /* LinkedIn icon */
+.report-link:hover {
+  color: var(--red);
+}
 
-    .site-footer {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      padding: 0;
-      border: none;
-      margin-top: 1.5rem;
-    }
+/* LinkedIn icon */
 
-    .linkedin-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--ink);
-      transition: color 160ms ease;
-    }
+.site-footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  border: none;
+  margin-top: 1.5rem;
+}
 
-    .linkedin-link:hover {
-      color: var(--red);
-    }
+.linkedin-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--paper);
+  transition: color 160ms ease;
+}
 
-    .linkedin-link svg {
-      display: block;
-    }
+.linkedin-link:hover {
+  color: var(--red);
+}
+
+.linkedin-link svg {
+  display: block;
+}
 
     /* Contact */
 
