@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,6 +63,13 @@
       border: none;
     }
 
+    .arrow {
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: inherit;
+  font-variant-emoji: text;
+}
     .nav {
       display: flex;
       align-items: center;
@@ -187,8 +194,9 @@
     /* Lochend story */
 
     .story {
-      padding: clamp(65px, 10vw, 140px) var(--gutter);
-    }
+  padding: clamp(65px, 10vw, 140px) var(--gutter);
+  background: var(--stone);
+}
 
     .section-top {
       display: flex;
@@ -513,7 +521,7 @@
     <header class="site-header">
       <nav class="nav" aria-label="Main navigation">
         <a href="#about">About Mel</a>
-        <a href="#contact">Contact ↗</a>
+        <a href="#contact">Contact <span class="arrow">↗</span></a>
       </nav>
     </header>
 
@@ -561,7 +569,7 @@
               rel="noopener noreferrer"
               id="video-link"
             >
-              Watch: The Lochend story <span aria-hidden="true">↗</span>
+              Watch: The Lochend story <span class="arrow" aria-hidden="true">↗</span>
             </a>
           </div>
         </div>
@@ -640,7 +648,7 @@
 
           <!-- Replace with your actual email address. -->
           <a class="email-link" href="mailto:YOUR-EMAIL@example.com">
-            YOUR-EMAIL@example.com ↗
+            YOUR-EMAIL@example.com <span class="arrow" aria-hidden="true">↗</span>
           </a>
         </div>
       </section>
@@ -649,4 +657,3 @@
   </div>
 </body>
 </html>
-```
