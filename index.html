@@ -407,20 +407,28 @@
     }
 
     .site-footer {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 20px var(--gutter);
-      border-top: 1px solid var(--line);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 18px var(--gutter);
+  border-top: 1px solid var(--line);
+}
 
-    .site-footer p {
-      margin: 0;
-    }
+.linkedin-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  transition: color 160ms ease;
+}
+
+.linkedin-link:hover {
+  color: var(--red);
+}
+
+.linkedin-link svg {
+  display: block;
+}
 
     .back-top {
       color: var(--red);
@@ -552,7 +560,7 @@
       <section class="story" id="lochend">
         <div class="section-top">
           <p>Lochend, north east Edinburgh</p>
-          <p class="index">People before property</p>
+      
         </div>
 
         <div class="story-grid">
@@ -612,7 +620,7 @@
       <section class="about" id="about">
         <div class="section-top">
           <p>About Mel</p>
-          <p class="index">The person behind the practice</p>
+          
         </div>
 
         <div class="about-grid">
@@ -641,10 +649,10 @@
       <section class="contact" id="contact">
         <div class="section-top">
           <p>Contact</p>
-          <p class="index">Start a conversation</p>
+         
         </div>
 
-        <h2>Let’s make<br>things <span>better.</span></h2>
+        <h2>Get in <span>touch.</span></h2>
 
         <div class="contact-bottom">
           <p>
@@ -660,11 +668,28 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <p>People Not Buildings</p>
-      <p>Independent · Public interest</p>
-      <a class="back-top" href="#top">Back to top ↑</a>
-    </footer>
+  
+<footer class="site-footer">
+  <a
+    class="linkedin-link"
+    href="https://www.linkedin.com/in/melesquerre//"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Mel on LinkedIn"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/>
+    </svg>
+  </a>
+</footer>
+
 
   </div>
 </body>
