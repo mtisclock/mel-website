@@ -9,18 +9,23 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --background: #4C5F6B;
-      --text: #FFFFFF;
-      --muted: rgba(255, 255, 255, 0.76);
-      --line: rgba(255, 255, 255, 0.25);
+      --bg-slate: #4C5F6B;
+      --bg-white: #FFFFFF;
+      --text-light: #FFFFFF;
+      --text-muted-light: rgba(255, 255, 255, 0.88);
+      --text-dark: #111827;
+      --text-muted-dark: #4B5563;
+      --line-light: rgba(255, 255, 255, 0.22);
+      --line-dark: #E5E7EB;
     }
 
     * {
       box-sizing: border-box;
+      border-radius: 0 !important;
     }
 
     html {
@@ -29,146 +34,152 @@
 
     body {
       margin: 0;
-      background: var(--background);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-slate);
+      color: var(--text-light);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       font-size: 16px;
-      line-height: 1.7;
+      line-height: 1.42;
       -webkit-font-smoothing: antialiased;
     }
 
     a {
-      color: var(--text);
+      color: inherit;
       text-decoration-thickness: 1px;
       text-underline-offset: 4px;
+      font-weight: 500;
     }
 
     a:hover {
-      opacity: 0.75;
+      opacity: 0.8;
     }
 
-    .page {
-      width: min(100% - 48px, 1000px);
+    /* Top Slate Blue Section */
+    .slate-wrapper {
+      background-color: var(--bg-slate);
+      color: var(--text-light);
+      padding-bottom: 52px;
+    }
+
+    .page-container {
+      width: min(100% - 64px, 1020px);
       margin: 0 auto;
     }
 
     header {
-      padding: 64px 0 48px;
-      border-bottom: 1px solid var(--line);
+      padding: 56px 0 40px;
+      border-bottom: 1px solid var(--line-light);
     }
 
     .identity {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      gap: 32px;
+      gap: 40px;
     }
 
     .identity-text {
       flex: 1;
+      min-width: 0;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2.4rem, 7vw, 5.2rem);
-      line-height: 1.08;
-      letter-spacing: 0.01em; /* Reduced spacing between letters */
-      font-weight: 500;
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      font-weight: 700;
     }
 
     .qualifications {
       display: block;
       margin-top: 6px;
-      font-size: clamp(1rem, 2.5vw, 1.35rem);
-      font-weight: 300; /* Thinner font */
-      opacity: 0.85;
-      letter-spacing: 0.02em;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.9;
     }
 
     .tagline {
       margin-top: 18px;
-      font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
       font-weight: 400;
-      line-height: 1.4;
-      color: var(--muted);
+      line-height: 1.38;
+      color: var(--text-muted-light);
+      max-width: 540px;
     }
 
-    /* Fixed portrait/landscape image styling */
     .portrait {
       display: block;
-      width: clamp(140px, 22vw, 220px);
-      aspect-ratio: 4 / 3; /* Landscape orientation */
+      width: clamp(170px, 24vw, 240px);
+      aspect-ratio: 4 / 3;
       object-fit: cover;
-      border-radius: 2px;
       flex-shrink: 0;
+      border: 1px solid var(--line-light);
     }
 
-    .intro {
-      max-width: 720px;
-      padding: 42px 0 52px;
+    /* Lochend Section */
+    .lochend-section {
+      padding-top: 40px;
     }
 
-    .intro p {
-      margin: 0 0 20px;
-      font-size: clamp(1.15rem, 2.5vw, 1.55rem);
-      line-height: 1.55;
-      font-weight: 400;
+    h2 {
+      margin: 0 0 16px;
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.015em;
     }
 
-    .intro p:last-child {
+    /* Flex grid aligned directly to paragraph top */
+    .lochend-body-grid {
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    .lochend-text {
+      flex: 1.1;
+      min-width: 0;
+    }
+
+    .lochend-text p:first-child {
+      margin-top: 0;
+    }
+
+    .lochend-media {
+      flex: 0.9;
+      min-width: 0;
+    }
+
+    .slate-wrapper p {
+      margin: 0 0 10px;
+      color: var(--text-muted-light);
+      font-size: 1.02rem;
+      line-height: 1.42;
+    }
+
+    .slate-wrapper p:last-child {
       margin-bottom: 0;
     }
 
-    .eyebrow {
-      margin: 0 0 18px;
-      font-size: 0.75rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    section {
-      padding: 38px 0 42px;
-      border-top: 1px solid var(--line);
-    }
-
-    section h2 {
-      margin: 0 0 18px;
-      font-size: 1.25rem;
-      font-weight: 500;
-      letter-spacing: 0.015em;
-    }
-
-    section p {
-      max-width: 700px;
-      margin: 0 0 18px;
-      color: var(--muted);
-    }
-
-    section p:last-child {
-      margin-bottom: 0;
-    }
-
-    .callout {
-      margin: 20px 0;
-      padding: 16px 20px;
-      border-left: 3px solid var(--text);
-      background: rgba(255, 255, 255, 0.06);
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .video {
+    /* Clickable Video Poster Container */
+    .video-poster-card {
       position: relative;
       width: 100%;
-      max-width: 760px;
       aspect-ratio: 16 / 9;
-      margin-top: 26px;
-      background: rgba(0, 0, 0, 0.15);
+      margin-top: 0;
+      background-color: #1A2228;
+      background-size: cover;
+      background-position: center;
+      border: 1px solid var(--line-light);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
 
-    .video iframe {
+    .video-poster-card iframe {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -176,19 +187,73 @@
       border: 0;
     }
 
-    .feature {
-      margin-top: 22px;
-      padding: 24px;
-      border: 1px solid var(--line);
+    .play-button {
+      width: 58px;
+      height: 58px;
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      z-index: 2;
     }
 
-    .feature p {
-      margin-bottom: 16px;
+    .play-button::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10px 0 10px 18px;
+      border-color: transparent transparent transparent #FFFFFF;
+      margin-left: 4px;
     }
 
-    .feature a {
-      display: inline-block;
-      margin-top: 4px;
+    .video-poster-card:hover .play-button {
+      background: #FFFFFF;
+      border-color: #FFFFFF;
+    }
+
+    .video-poster-card:hover .play-button::after {
+      border-color: transparent transparent transparent #111827;
+    }
+
+    /* Bottom Clean White Section */
+    .white-wrapper {
+      background-color: var(--bg-white);
+      color: var(--text-dark);
+      padding: 20px 0 60px;
+    }
+
+    .white-wrapper section {
+      padding: 36px 0;
+      border-bottom: 1px solid var(--line-dark);
+    }
+
+    .white-wrapper section:last-of-type {
+      border-bottom: none;
+    }
+
+    .white-wrapper h2 {
+      color: var(--text-dark);
+    }
+
+    .white-wrapper p {
+      margin: 0 0 10px;
+      color: var(--text-muted-dark);
+      font-size: 1.02rem;
+      line-height: 1.42;
+      max-width: 760px;
+    }
+
+    .white-wrapper p:last-child {
+      margin-bottom: 0;
+    }
+
+    .white-wrapper p strong {
+      color: var(--text-dark);
+      font-weight: 700;
     }
 
     footer {
@@ -196,145 +261,147 @@
       align-items: center;
       justify-content: space-between;
       gap: 24px;
-      padding: 28px 0 48px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 0.85rem;
+      padding-top: 40px;
+      border-top: 1px solid var(--line-dark);
+      color: var(--text-muted-dark);
+      font-size: 0.88rem;
     }
 
     .linkedin {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 36px;
-      height: 36px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--text-dark);
+      color: var(--text-dark);
       text-decoration: none;
-      font-weight: 600;
-      font-size: 0.8rem;
-      letter-spacing: -0.04em;
+      font-weight: 700;
+      font-size: 0.85rem;
     }
 
-    @media (max-width: 560px) {
-      .page {
-        width: min(100% - 36px, 1000px);
+    .linkedin:hover {
+      background: var(--text-dark);
+      color: var(--bg-white);
+    }
+
+    @media (max-width: 768px) {
+      .page-container {
+        width: min(100% - 36px, 1020px);
       }
 
       header {
-        padding: 36px 0 32px;
+        padding: 40px 0 32px;
       }
 
       .identity {
         flex-direction: column-reverse;
-        gap: 20px;
-      }
-
-      h1 {
-        font-size: clamp(1.8rem, 8vw, 3rem);
-        letter-spacing: 0.01em;
-        overflow-wrap: anywhere;
+        gap: 24px;
       }
 
       .portrait {
         width: 100%;
-        max-width: 280px;
-        aspect-ratio: 4 / 3;
+        max-width: 260px;
       }
 
-      .intro {
-        padding: 32px 0 38px;
+      .lochend-body-grid {
+        flex-direction: column;
+        gap: 24px;
       }
 
-      section {
-        padding: 30px 0 34px;
-      }
-
-      .feature {
-        padding: 18px;
+      .lochend-media {
+        width: 100%;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="page">
 
-    <header>
-      <div class="identity">
-        <div class="identity-text">
-          <h1>Mel Esquerre</h1>
-          <span class="qualifications">MBA CF</span>
-          <div class="tagline">Designing programmes and services that put people first.</div>
+  <!-- Top Slate Blue Wrapper -->
+  <div class="slate-wrapper">
+    <div class="page-container">
+
+      <header>
+        <div class="identity">
+          <div class="identity-text">
+            <h1>Mel Esquerre</h1>
+            <span class="qualifications">MBA CF</span>
+            <div class="tagline">Designing programmes and services that put people first</div>
+          </div>
+          <img class="portrait" src="mel.jpg" alt="Portrait of Mel Esquerre">
         </div>
-        <img class="portrait" src="mel.jpg" alt="Portrait of Mel Esquerre">
-      </div>
-    </header>
+      </header>
 
-    <main>
-
-      <section id="lochend">
-        <p class="eyebrow">01 / Case study</p>
+      <section class="lochend-section" id="lochend">
         <h2>Lochend</h2>
-        <p>I live in Lochend, in north east Edinburgh. Since 2023 a government-funded retrofit programme has been rolled out across our neighbourhood, an area of high deprivation. It started with good intentions but the programme design did not follow the reality of what a low income community needs. For many of us this has resulted in debt, poor quality works, damage, and in some cases eviction. Others have been left with no improvements at all.</p>
-        <p>Walk round Lochend today and you can see buildings that were never upgraded, because the people who had a choice said no.</p>
-        <p>I’m one of the residents directly affected by this programme and that is what drives my work.</p>
-
-        <div class="video">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/feq_eQRjyCc"
-            title="Lochend case study video"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
-          </iframe>
+        <div class="lochend-body-grid">
+          <div class="lochend-text">
+            <p>I live in Lochend, north east Edinburgh, an area of high deprivation. Since 2023 a government-funded retrofit programme has been rolled out across many homes in our community, including my own.</p>
+            <p>Despite good intentions, the programme was not designed around the realities and needs of a low-income community. For many of us this has resulted in debt, poor quality works, damage, and in some cases, eviction. Others have been left with no improvements at all.</p>
+          </div>
+          <div class="lochend-media">
+            <div class="video-poster-card" id="videoCard" style="background-image: url('https://img.youtube.com/vi/feq_eQRjyCc/maxresdefault.jpg');" onclick="playVideo()">
+              <div class="play-button" aria-label="Play video"></div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="working-on">
-        <p class="eyebrow">02 / Now</p>
-        <h2>What I’m working on</h2>
-        <p>Retrofit means asking millions of households to say yes, and people only say yes to what they trust. Without it, programmes can’t scale.</p>
-
-        <div class="callout">No trust, no scale.</div>
-
-        <p>Lochend is what that looks like on the ground. Most retrofit programmes start with the surveys and the budget, and trust comes in at the end, when it’s usually too late. I want to do it the other way round: trust first, before anything is designed. I call it pre-design trust.</p>
-        <p>I am working on two specific questions: How do we build trust and the right practices into retrofit programmes? And if we did start early, how do we stop it turning into a box to tick?</p>
-      </section>
-
-      <section id="background">
-        <p class="eyebrow">03 / About</p>
-        <h2>Background</h2>
-        <p>I’ve worked in social housing, energy efficiency and construction. For the last 3 years I’ve been campaigning on retrofit with Living Rent and talking to industry and councils about what I’ve seen so that this does not happen to other communities. I trained in service design, which is how I approach most things.</p>
-      </section>
-
-      <section id="people-not-buildings">
-        <p class="eyebrow">04 / Point of view</p>
-        <h2>People Not Buildings</h2>
-        <p>My Churchill Fellowship report, on what happens when residents are trusted to take part in retrofit:</p>
-        <p><a href="https://www.churchillfellowship.org/ideas-experts/ideas-library/people-not-buildings-trust-empowerment-and-resident-participation-in-urban-retrofit-and-adaptation/" target="_blank" rel="noopener noreferrer">Read my Churchill Fellowship work ↗</a></p>
-      </section>
-
-      <section id="talks">
-        <p class="eyebrow">05 / Sharing practice</p>
-        <h2>Talks and training</h2>
-        <p>I speak to staff, contractors, housing providers and industry bodies about why residents say yes or no to retrofit, and what that means for how programmes are run.</p>
-      </section>
-
-      <section id="contact">
-        <p class="eyebrow">06 / Get in touch</p>
-        <h2>Contact</h2>
-        <p>For conversations, collaborations, talks or training:</p>
-        <p><a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a></p>
-      </section>
-    </main>
-
-    <footer>
-      <span>Mel Esquerre · People Not Buildings</span>
-      <a class="linkedin" href="https://www.linkedin.com/in/melesquerre/" target="_blank" rel="noopener noreferrer" aria-label="Mel Esquerre on LinkedIn">in</a>
-    </footer>
-
+    </div>
   </div>
+
+  <!-- Bottom White Wrapper -->
+  <div class="white-wrapper">
+    <div class="page-container">
+
+      <main>
+        <section id="working-on">
+          <h2>What I’m working on</h2>
+          <p>Retrofit means asking millions of households to say yes, and people only say yes to what they trust. Without it, programmes can’t scale.</p>
+          <p><strong>No trust, no scale.</strong></p>
+          <p>Lochend is what that looks like on the ground. Most retrofit programmes start with the surveys and the budget, and trust comes in at the end, when it’s usually too late. I want to do it the other way round: trust first, before anything is designed. I call it pre-design trust.</p>
+          <p>I am working on two specific questions: How do we build trust and the right practices into retrofit programmes? And if we did start early, how do we stop it turning into a box to tick?</p>
+        </section>
+
+        <section id="background">
+          <h2>Background</h2>
+          <p>I’ve worked in social housing, energy efficiency and construction. For the last 3 years I’ve been campaigning on retrofit with Living Rent and talking to industry and councils about what I’ve seen so that this does not happen to other communities. I trained in service design, which is how I approach most things.</p>
+        </section>
+
+        <section id="people-not-buildings">
+          <h2>People Not Buildings</h2>
+          <p>My Churchill Fellowship report, on what happens when residents are trusted to take part in retrofit:</p>
+          <p><a href="https://www.churchillfellowship.org/ideas-experts/ideas-library/people-not-buildings-trust-empowerment-and-resident-participation-in-urban-retrofit-and-adaptation/" target="_blank" rel="noopener noreferrer">Read my Churchill Fellowship work ↗</a></p>
+        </section>
+
+        <section id="talks">
+          <h2>Talks and training</h2>
+          <p>I speak to staff, contractors, housing providers and industry bodies about why residents say yes or no to retrofit, and what that means for how programmes are run.</p>
+        </section>
+
+        <section id="contact">
+          <h2>Contact</h2>
+          <p>For conversations, collaborations, talks or training:</p>
+          <p><a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a></p>
+        </section>
+      </main>
+
+      <footer>
+        <span>Mel Esquerre · 2026</span>
+        <a class="linkedin" href="https://www.linkedin.com/in/melesquerre/" target="_blank" rel="noopener noreferrer" aria-label="Mel Esquerre on LinkedIn">in</a>
+      </footer>
+
+    </div>
+  </div>
+
+  <script>
+    function playVideo() {
+      var card = document.getElementById('videoCard');
+      card.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/feq_eQRjyCc?autoplay=1" title="Lochend case study video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+      card.onclick = null;
+    }
+  </script>
+
 </body>
 </html>
