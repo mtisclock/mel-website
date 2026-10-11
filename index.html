@@ -344,6 +344,19 @@
       padding-top: 40px;
     }
 
+.about-intro {
+  min-width: 0;
+}
+
+.about-portrait {
+  display: block;
+  width: min(100%, 300px);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  margin-top: 32px;
+}
+
     .about h2 {
       margin: 0;
       font-size: clamp(58px, 9vw, 120px);
@@ -472,6 +485,12 @@
         gap: 14px;
         font-size: 10px;
       }
+
+.about-portrait {
+  width: min(100%, 260px);
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
 
       .hero h1 {
         font-size: clamp(70px, 16vw, 115px);
@@ -602,10 +621,19 @@
           <p>About Mel</p>
         </div>
 
-        <div class="about-grid">
-          <h2>People<br>are the <span>point</span></h2>
+        
+<div class="about-grid">
+  <div class="about-intro">
+    <h2>People<br>are the <span>point</span></h2>
+    <img
+      src="mel-portrait.jpeg"
+      alt="Mel Esquerre"
+      class="about-portrait"
+    >
+  </div>
 
-          <div class="about-copy">
+  <div class="about-copy">
+
             <p>
               I’m Mel Esquerre, a Lochend resident, researcher and service designer.
             </p>
