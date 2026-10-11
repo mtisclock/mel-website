@@ -106,22 +106,19 @@
 .hero {
   padding: clamp(65px, 8vw, 110px) var(--gutter) 75px;
 }
+
 .hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
-  align-items: center;
-  gap: clamp(24px, 3vw, 48px);
+  display: block;
   max-width: 1400px;
   margin: 0 auto;
 }
 
-
 .hero h1 {
   margin: 0;
-  font-size: clamp(62px, 6.5vw, 100px);
+  font-size: clamp(90px, 10.5vw, 160px);
   font-weight: 800;
   letter-spacing: -0.075em;
-  line-height: 0.88;
+  line-height: 0.84;
 }
 
 .hero h1 span {
@@ -130,15 +127,6 @@
 
 .hero h1 .red {
   color: var(--accent);
-}
-
-.hero-image {
-  display: block;
-  width: 100%;
-  max-width: 520px;
-  height: auto;
-  justify-self: start;
-  object-fit: contain;
 }
 
 .hero-bottom {
@@ -613,11 +601,7 @@
     <span>buildings</span>
   </h1>
 
-  <img
-    src="main-2.jpg"
-    alt="Retrofit work in progress"
-    class="hero-image"
-  >
+  
 </div>
 
 
@@ -664,11 +648,9 @@
 <div class="about-grid">
   <div class="about-intro">
     <h2>People<br>are the <span>point</span></h2>
-    <img
-      src="mel-portrait.jpeg"
-      alt="Mel Esquerre"
-      class="about-portrait"
-    >
+    <img src="mel-profile.jpeg" 
+      alt="Mel facilitating a retrofit workshop" 
+      class="about-portrait">
   </div>
 
   <div class="about-copy">
