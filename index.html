@@ -106,15 +106,15 @@
 .hero {
   padding: clamp(65px, 8vw, 110px) var(--gutter) 75px;
 }
-
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.75fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
   align-items: center;
-  gap: clamp(32px, 5vw, 72px);
-  max-width: 1240px;
+  gap: clamp(24px, 3vw, 48px);
+  max-width: 1400px;
   margin: 0 auto;
 }
+
 
 .hero h1 {
   margin: 0;
@@ -135,12 +135,10 @@
 .hero-image {
   display: block;
   width: 100%;
-  max-width: 370px;
-  max-height: 450px;
+  max-width: 520px;
   height: auto;
-  justify-self: center;
+  justify-self: start;
   object-fit: contain;
-  object-position: center;
 }
 
 .hero-bottom {
