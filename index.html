@@ -101,29 +101,27 @@
       color: var(--accent);
     }
 
-    /* Hero */
+/* Hero — desktop */
 
-
-```css
 .hero {
-  padding: 100px var(--gutter) 80px;
+  padding: clamp(65px, 8vw, 110px) var(--gutter) 75px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.75fr);
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.75fr);
   align-items: center;
-  gap: clamp(36px, 5vw, 80px);
-  max-width: 1250px;
+  gap: clamp(32px, 5vw, 72px);
+  max-width: 1240px;
   margin: 0 auto;
 }
 
 .hero h1 {
   margin: 0;
-  font-size: clamp(64px, 7vw, 104px);
+  font-size: clamp(62px, 6.5vw, 100px);
   font-weight: 800;
   letter-spacing: -0.075em;
-  line-height: 0.91;
+  line-height: 0.88;
 }
 
 .hero h1 span {
@@ -137,8 +135,8 @@
 .hero-image {
   display: block;
   width: 100%;
-  max-width: 390px;
-  max-height: 480px;
+  max-width: 370px;
+  max-height: 450px;
   height: auto;
   justify-self: center;
   object-fit: contain;
@@ -146,31 +144,20 @@
 }
 
 .hero-bottom {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(240px, 420px);
-  align-items: end;
-  gap: 35px;
-  max-width: 1250px;
-  margin: 90px auto 0;
-  padding-top: 24px;
+  display: block;
+  max-width: 1240px;
+  margin: 60px auto 0;
+  padding-top: 22px;
   border-top: 1px solid var(--rule);
 }
 
 .hero-bottom .statement {
-  max-width: 700px;
+  max-width: 680px;
   margin: 0;
-  font-size: clamp(23px, 2.6vw, 36px);
+  font-size: clamp(23px, 2.5vw, 34px);
   font-weight: 600;
   letter-spacing: -0.045em;
-  line-height: 1.1;
-}
-
-.hero-bottom .note {
-  max-width: 350px;
-  margin: 0;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.12;
 }
 
 @media (min-width: 1600px) {
