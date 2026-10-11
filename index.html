@@ -4,20 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#F2EFE8">
-
-<meta name="description" content="People Not Buildings — rethinking how retrofit is designed, delivered and experienced by the people it’s meant to serve.">
-
+  <meta name="theme-color" content="#F1ECE2">
+  <meta name="description" content="People Not Buildings — rethinking how retrofit is designed, delivered and experienced by the people it’s meant to serve.">
   <title>People Not Buildings — Mel</title>
 
   <style>
     :root {
-      --paper: #F2EFE8;
-      --ink: #302E2B;
-      --stone: #E4E0D7;
-      --red: #EF3E24;
+      --bg: #F1ECE2;
+      --bg-band: #E2D6C2;
+      --ink: #2B2A28;
+      --accent: #B63E27;
+      --accent-on-dark: #DD6A4F;
+      --rule: rgba(43, 42, 40, 0.25);
       --muted: #706C65;
-      --line: rgba(25, 25, 25, 0.25);
       --gutter: clamp(22px, 5vw, 76px);
       --max-width: 1600px;
     }
@@ -33,7 +32,7 @@
 
     body {
       margin: 0;
-      background: var(--paper);
+      background: var(--bg);
       color: var(--ink);
       font-family: Arial, Helvetica, sans-serif;
       -webkit-font-smoothing: antialiased;
@@ -45,7 +44,7 @@
     }
 
     a:focus-visible {
-      outline: 2px solid var(--red);
+      outline: 2px solid var(--accent);
       outline-offset: 5px;
     }
 
@@ -66,20 +65,22 @@
     }
 
     .arrow-icon {
-  display: inline-block;
-  width: 0.85em;
-  height: 0.85em;
-  vertical-align: -0.02em;
-  flex-shrink: 0;
-  color: currentColor;
-}
+      display: inline-block;
+      width: 0.85em;
+      height: 0.85em;
+      vertical-align: -0.02em;
+      flex-shrink: 0;
+      color: currentColor;
+    }
+
     .arrow {
-  display: inline-block;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  font-weight: inherit;
-  font-variant-emoji: text;
-}
+      display: inline-block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1em;
+      font-weight: inherit;
+      font-variant-emoji: text;
+    }
+
     .nav {
       display: flex;
       align-items: center;
@@ -97,14 +98,14 @@
 
     .nav a:hover,
     .text-link:hover {
-      color: var(--red);
+      color: var(--accent);
     }
 
     /* Hero */
 
     .hero {
       padding: clamp(60px, 10vw, 150px) var(--gutter)
-               clamp(55px, 8vw, 110px);
+        clamp(55px, 8vw, 110px);
     }
 
     .hero h1 {
@@ -120,7 +121,7 @@
     }
 
     .hero h1 .red {
-      color: var(--red);
+      color: var(--accent);
     }
 
     .hero-bottom {
@@ -130,7 +131,7 @@
       gap: 35px;
       margin-top: clamp(48px, 8vw, 105px);
       padding-top: 24px;
-      border-top: 1px solid var(--line);
+      border-top: 1px solid var(--rule);
     }
 
     .hero-bottom .statement {
@@ -155,7 +156,7 @@
     .statement-section {
       padding: clamp(55px, 9vw, 125px) var(--gutter);
       background: var(--ink);
-      color: var(--paper);
+      color: var(--bg);
     }
 
     .statement-section .eyebrow {
@@ -172,7 +173,7 @@
     }
 
     .statement-section h2 span {
-      color: var(--red);
+      color: var(--accent-on-dark);
     }
 
     .statement-footer {
@@ -182,7 +183,7 @@
       gap: 30px;
       margin-top: clamp(45px, 7vw, 90px);
       padding-top: 22px;
-      border-top: 1px solid rgba(242, 239, 232, 0.35);
+      border-top: 1px solid rgba(241, 236, 226, 0.35);
     }
 
     .statement-footer p {
@@ -196,7 +197,7 @@
 
     .small-mark {
       flex-shrink: 0;
-      color: var(--red);
+      color: var(--accent-on-dark);
       font-size: 30px;
       font-weight: 700;
     }
@@ -204,9 +205,9 @@
     /* Lochend story */
 
     .story {
-  padding: clamp(65px, 10vw, 140px) var(--gutter);
-  background: var(--stone);
-}
+      padding: clamp(65px, 10vw, 140px) var(--gutter);
+      background: var(--bg-band);
+    }
 
     .section-top {
       display: flex;
@@ -214,7 +215,7 @@
       align-items: center;
       gap: 20px;
       padding-bottom: 18px;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid var(--rule);
     }
 
     .section-top p {
@@ -226,15 +227,16 @@
     }
 
     .section-top .index {
-      color: var(--red);
+      color: var(--accent);
     }
 
     .story-intro {
-  max-width: 620px;
-  margin: 0;
-  font-size: clamp(16px, 1.5vw, 19px);
-  line-height: 1.75;
-}
+      max-width: 620px;
+      margin: 0;
+      font-size: clamp(16px, 1.5vw, 19px);
+      line-height: 1.75;
+    }
+
     .story-grid {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(280px, 0.85fr);
@@ -252,7 +254,7 @@
     }
 
     .story h2 span {
-      color: var(--red);
+      color: var(--accent);
     }
 
     .story-copy {
@@ -276,8 +278,8 @@
       gap: 14px;
       margin-top: 18px;
       padding: 17px 20px;
-      background: var(--red);
-      color: var(--ink);
+      background: var(--accent);
+      color: var(--bg);
       font-size: 11px;
       font-weight: 800;
       letter-spacing: 0.07em;
@@ -287,14 +289,14 @@
 
     .video-link:hover {
       background: var(--ink);
-      color: var(--paper);
+      color: var(--bg);
     }
 
     .video-wrap {
       grid-column: 1 / -1;
       margin-top: clamp(30px, 4vw, 55px);
-      background: var(--stone);
-      border-top: 1px solid var(--line);
+      background: var(--bg-band);
+      border-top: 1px solid var(--rule);
     }
 
     .video-frame {
@@ -325,94 +327,96 @@
 
     /* About */
 
-.about {
-  padding: clamp(65px, 10vw, 130px) var(--gutter);
-  background: var(--ink);
-  color: var(--paper);
-}
+    .about {
+      padding: clamp(65px, 10vw, 130px) var(--gutter);
+      background: var(--ink);
+      color: var(--bg);
+    }
 
-.about .section-top {
-  border-bottom-color: rgba(242, 239, 232, 0.35);
-}
+    .about .section-top {
+      border-bottom-color: rgba(241, 236, 226, 0.35);
+    }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 0.8fr 1fr;
-  gap: clamp(35px, 9vw, 130px);
-  padding-top: 40px;
-}
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1fr;
+      gap: clamp(35px, 9vw, 130px);
+      padding-top: 40px;
+    }
 
-.about h2 {
-  margin: 0;
-  font-size: clamp(58px, 9vw, 120px);
-  font-weight: 800;
-  letter-spacing: -0.085em;
-  line-height: 0.85;
-}
+    .about h2 {
+      margin: 0;
+      font-size: clamp(58px, 9vw, 120px);
+      font-weight: 800;
+      letter-spacing: -0.085em;
+      line-height: 0.85;
+    }
 
-.about h2 span {
-  color: var(--red);
-}
+    .about h2 span {
+      color: var(--accent-on-dark);
+    }
 
-.about-copy {
-  max-width: 600px;
-}
+    .about-copy {
+      max-width: 600px;
+    }
 
-.about-copy p {
-  margin: 0 0 22px;
-  font-size: clamp(17px, 1.6vw, 21px);
-  line-height: 1.7;
-}
+    .about-copy p {
+      margin: 0 0 22px;
+      font-size: clamp(17px, 1.6vw, 21px);
+      line-height: 1.7;
+    }
 
-.about-copy .placeholder-note {
-  color: #BDB8AE;
-  font-size: 14px;
-}
+    .about-copy .placeholder-note {
+      color: #BDB8AE;
+      font-size: 14px;
+    }
 
-.report-link {
-  color: var(--paper);
-  text-decoration: underline;
-  text-decoration-color: var(--red);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-  overflow-wrap: anywhere;
-}
+    .report-link {
+      color: var(--bg);
+      text-decoration: underline;
+      text-decoration-color: var(--accent-on-dark);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+      overflow-wrap: anywhere;
+    }
 
-.report-link:hover {
-  color: var(--red);
-}
+    .report-link:hover {
+      color: var(--accent-on-dark);
+    }
 
-/* LinkedIn icon */
+    /* LinkedIn icon */
 
-.site-footer {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 0;
-  border: none;
-  margin-top: 1.5rem;
-}
+    .site-footer {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0;
+      border: none;
+      margin-top: 1.5rem;
+    }
 
-.linkedin-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--paper);
-  transition: color 160ms ease;
-}
+    .linkedin-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bg);
+      transition: color 160ms ease;
+    }
 
-.linkedin-link:hover {
-  color: var(--red);
-}
+    .linkedin-link:hover {
+      color: var(--accent-on-dark);
+    }
 
-.linkedin-link svg {
-  display: block;
-}
+    .linkedin-link svg {
+      display: block;
+    }
 
     /* Contact */
 
     .contact {
       padding: clamp(65px, 10vw, 135px) var(--gutter);
+      background: var(--bg);
+      color: var(--ink);
     }
 
     .contact h2 {
@@ -425,7 +429,7 @@
     }
 
     .contact h2 span {
-      color: var(--red);
+      color: var(--accent);
     }
 
     .contact-bottom {
@@ -434,7 +438,7 @@
       align-items: end;
       gap: 25px;
       padding-top: 22px;
-      border-top: 1px solid var(--line);
+      border-top: 1px solid var(--rule);
     }
 
     .contact-bottom p {
@@ -450,7 +454,7 @@
       font-weight: 700;
       overflow-wrap: anywhere;
       text-decoration: underline;
-      text-decoration-color: var(--red);
+      text-decoration-color: var(--accent);
       text-decoration-thickness: 2px;
       text-underline-offset: 5px;
     }
@@ -543,12 +547,12 @@
     <header class="site-header">
       <nav class="nav" aria-label="Main navigation">
         <a href="#about">About Mel</a>
-     <a href="#contact">
-  Contact
-  <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-    <path d="M3 13L13 3M5 3H13V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/>
-  </svg>
-</a>
+        <a href="#contact">
+          Contact
+          <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 13L13 3M5 3H13V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/>
+          </svg>
+        </a>
       </nav>
     </header>
 
@@ -564,7 +568,6 @@
           <p class="statement">
             Rethinking how retrofit is designed, delivered and experienced by the people it’s meant to serve.
           </p>
-
         </div>
       </section>
 
@@ -584,18 +587,12 @@
 
             <p>Despite good intentions, the programme design did not follow the reality of what a low income community needs. For many of us this has resulted in debt, poor quality works, damage, and in some cases eviction. Others have been left with no improvements at all.</p>
 
-          <a
-  class="video-link"
-  href="https://www.youtube.com/watch?v=feq_eQRjyCc"
-  target="_blank"
-  rel="noopener noreferrer"
-  id="video-link"
->
-  Watch: The Lochend story
-  <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-    <path d="M3 13L13 3M5 3H13V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/>
-  </svg>
-</a>
+            <a class="video-link" href="https://www.youtube.com/watch?v=feq_eQRjyCc" target="_blank" rel="noopener noreferrer" id="video-link">
+              Watch: The Lochend story
+              <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 13L13 3M5 3H13V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/>
+              </svg>
+            </a>
           </div>
         </div>
       </section>
@@ -610,48 +607,30 @@
 
           <div class="about-copy">
             <p>
-            I’m Mel Esquerre, a Lochend resident, researcher and service designer. 
-            </p>
-          
-            <p>
-            I’m interested in what it takes to make retrofit work for people on low incomes, not just those who can afford to pay. That starts with trust, built before anything else is designed. I call it <strong>pre-design trust</strong>.
+              I’m Mel Esquerre, a Lochend resident, researcher and service designer.
             </p>
 
             <p>
-            My work starts with people’s lived realities, asking what needs to change in the way retrofit is designed and delivered so that residents aren’t left carrying the cost of getting it wrong.
+              I’m interested in what it takes to make retrofit work for people on low incomes, not just those who can afford to pay. That starts with trust, built before anything else is designed. I call it <strong>pre-design trust</strong>.
             </p>
-            
+
             <p>
-            I’ve worked across social housing, energy efficiency and construction. For the past three years, I’ve also campaigned on retrofit with Living Rent, bringing what I’ve seen in Lochend to conversations with industry and councils so that others don’t have to go through the same thing.
+              My work starts with people’s lived realities, asking what needs to change in the way retrofit is designed and delivered so that residents aren’t left carrying the cost of getting it wrong.
+            </p>
+
+            <p>
+              I’ve worked across social housing, energy efficiency and construction. For the past three years, I’ve also campaigned on retrofit with Living Rent, bringing what I’ve seen in Lochend to conversations with industry and councils so that others don’t have to go through the same thing.
             </p>
 
             <p>
               My Churchill Fellowship explored what becomes possible when residents are trusted to shape retrofit:
-              <a
-                class="report-link"
-                href="https://www.churchillfellowship.org/ideas-experts/ideas-library/people-not-buildings-trust-empowerment-and-resident-participation-in-urban-retrofit-and-adaptation/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Read the report ↗</a>
+              <a class="report-link" href="https://www.churchillfellowship.org/ideas-experts/ideas-library/people-not-buildings-trust-empowerment-and-resident-participation-in-urban-retrofit-and-adaptation/" target="_blank" rel="noopener noreferrer">Read the report ↗</a>
             </p>
 
             <footer class="site-footer">
-              <a
-                class="linkedin-link"
-                href="https://www.linkedin.com/in/melesquerre/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Mel on LinkedIn"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/>
+              <a class="linkedin-link" href="https://www.linkedin.com/in/melesquerre/" target="_blank" rel="noopener noreferrer" aria-label="Mel on LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0-4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/>
                 </svg>
               </a>
             </footer>
@@ -665,26 +644,23 @@
         </div>
 
         <h2>Get in <span>touch</span></h2>
- <div class="about-copy">
-            <p>
-            I work with governments, councils, housing providers, funders and
-  researchers who want retrofit and other public programmes to work
-  for the people they’re meant to serve. That might mean advising on
-  programme design, speaking at an event, sharing what I’ve learned
-  in Lochend, or collaborating on research. If that sounds like you,
-  get in touch.
-            </p>
+
+        <div class="about-copy">
+          <p>
+            I work with governments, councils, housing providers, funders and researchers who want retrofit and other public programmes to work for the people they’re meant to serve. That might mean advising on programme design, speaking at an event, sharing what I’ve learned in Lochend, or collaborating on research. If that sounds like you, get in touch.
+          </p>
+
           <!-- Replace with your actual email address. -->
           <a class="email-link" href="mailto:YOUR-EMAIL@example.com">
-           YOUR-EMAIL@example.com
-<svg class="arrow-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-  <path d="M3 13L13 3M5 3H13V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/>
-</svg>
+            YOUR-EMAIL@example.com
+            <svg class="arrow-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 13L13 3M5 3H13V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/>
+            </svg>
           </a>
         </div>
       </section>
     </main>
-
   </div>
 </body>
 </html>
+
