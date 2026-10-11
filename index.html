@@ -107,7 +107,12 @@
       padding: clamp(60px, 10vw, 150px) var(--gutter)
         clamp(55px, 8vw, 110px);
     }
-
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  align-items: center;
+  gap: clamp(24px, 4vw, 64px);
+}
     
 .hero h1 {
   margin: 0;
@@ -494,6 +499,16 @@
   margin-bottom: 32px;
 }
 
+.hero-grid {
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+.hero-image {
+  width: min(100%, 420px);
+  max-height: 420px;
+}
+
       .hero h1 {
         font-size: clamp(70px, 16vw, 115px);
       }
@@ -580,11 +595,21 @@
     <main>
       <section class="hero" aria-labelledby="hero-title">
        
-<h1 id="hero-title">
-  <span class="red">People</span>
-  <span>not</span>
-  <span>buildings</span>
-</h1>
+
+<div class="hero-grid">
+  <h1 id="hero-title">
+    <span class="red">People</span>
+    <span>not</span>
+    <span>buildings</span>
+  </h1>
+
+  <img
+    src="main-image.jpeg"
+    alt="Portrait"
+    class="hero-image"
+  >
+</div>
+
 
 
         <div class="hero-bottom">
